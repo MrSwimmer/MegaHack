@@ -1,4 +1,4 @@
-package com.memebattle.megahack.main.fragment.settings;
+package com.memebattle.megahack.main.fragment.request.presentation;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,9 +9,9 @@ import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.memebattle.megahack.R;
 
-public class SettingsFragment extends MvpAppCompatFragment implements SettingsFragmentView {
+public class RequestFragment extends MvpAppCompatFragment implements RequestFragmentView {
     @InjectPresenter
-    SettingsFragmentPresenter presenter;
+    RequestFragmentPresenter presenter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

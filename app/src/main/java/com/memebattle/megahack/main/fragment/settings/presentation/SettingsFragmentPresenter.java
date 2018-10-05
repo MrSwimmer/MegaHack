@@ -1,4 +1,4 @@
-package com.memebattle.megahack.main.fragment.settings;
+package com.memebattle.megahack.main.fragment.settings.presentation;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;

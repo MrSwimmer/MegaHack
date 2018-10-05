@@ -1,4 +1,4 @@
-package com.memebattle.megahack.main.fragment.profile;
+package com.memebattle.megahack.main.fragment.profile.presentation;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
