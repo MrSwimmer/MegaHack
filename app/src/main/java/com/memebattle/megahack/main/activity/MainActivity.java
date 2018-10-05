@@ -1,4 +1,4 @@
-package com.memebattle.megahack.core;
+package com.memebattle.megahack.main.activity;
 
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
