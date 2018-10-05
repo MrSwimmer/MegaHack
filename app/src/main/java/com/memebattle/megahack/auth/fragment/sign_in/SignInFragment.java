@@ -18,4 +18,9 @@ public class SignInFragment extends MvpAppCompatFragment implements SignInFragme
         View view = inflater.inflate(R.layout.fragment_sign_in, container, false);
         return view;
     }
+
+    @Override
+    public void successSignIn() {
+        presenter.saveSharedPreference();
+    }
 }
