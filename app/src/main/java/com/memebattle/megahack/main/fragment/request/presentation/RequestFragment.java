@@ -1,8 +1,7 @@
 package com.memebattle.megahack.main.fragment.request.presentation;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,7 +13,7 @@ import android.view.ViewGroup;
 import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.memebattle.megahack.R;
-import com.memebattle.megahack.main.fragment.note.NoteFragment;
+import com.memebattle.megahack.main.activity.note.NoteActivity;
 import com.memebattle.megahack.main.fragment.request.presentation.recycler.RecyclerViewRequestsTaskAdapter;
 
 public class RequestFragment extends MvpAppCompatFragment implements RequestFragmentView {
@@ -40,13 +39,8 @@ public class RequestFragment extends MvpAppCompatFragment implements RequestFrag
 
     @Override
     public void openNote(String requestId) {
-        Log.i("TAG","openNote");/*
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.addToBackStack(null);
-        NoteFragment noteFragment = new NoteFragment();
-        fragmentTransaction.replace(R.id.container, noteFragment, null);
-        fragmentTransaction.commit();
-        */
+        Log.i("TAG","openNote");
+        startActivity(new Intent(getActivity(),NoteActivity.class));
+
     }
 }

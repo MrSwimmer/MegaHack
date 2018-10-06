@@ -13,6 +13,9 @@
         <activity android:name=".main.activity.MainActivity">
 
         </activity>
+        <activity android:name=".main.activity.note.NoteActivity">
+
+        </activity>
         <activity android:name=".auth.activity.AuthActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
