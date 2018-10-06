@@ -14,13 +14,14 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class App extends Application {
+
     ApiProfileService apiProfileService;
     ApiAuthService apiAuthService;
     ApiRequestService apiRequestService;
     Retrofit retrofit;
 
     public static App app;
-
+  
     @Override
     public void onCreate() {
         super.onCreate();
@@ -37,5 +38,4 @@ public class App extends Application {
         RequestApi requestApi = retrofit.create(RequestApi.class);
         apiRequestService = new ApiRequestService(requestApi);
     }
-
 }

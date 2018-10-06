@@ -16,7 +16,6 @@ import com.memebattle.megahack.main.fragment.settings.presentation.SettingsFragm
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     FragmentTransaction fragmentTransaction;
-    FrameLayout container;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
             fragmentTransaction.commit();
-            container = findViewById(R.id.container);
             return true;
         });
     }
