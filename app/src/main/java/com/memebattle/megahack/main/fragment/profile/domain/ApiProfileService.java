@@ -14,7 +14,7 @@ public class ApiProfileService {
         this.api = api;
     }
 
-    public void getProfile(ProfileCallback callback) {
+    public void getProfile(String id, ProfileCallback callback) {
         api.getProfile("")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
