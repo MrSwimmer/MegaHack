@@ -23,13 +23,12 @@ public class AuthActivity extends AppCompatActivity {
         setContentView(R.layout.activity_auth);
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
-        SignUpFragment signUpFragment = new SignUpFragment();
         String launch = App.settingsService.getUserId();
 
         if (!launch.equals("error")) {
             startActivity(new Intent(AuthActivity.this, MainActivity.class));
         }else{
-            fragmentTransaction.add(R.id.containerAuth, signInFragment);
+            fragmentTransaction.add(R.id.containerAuth, new SignInFragment());
             fragmentTransaction.commit();
         }
     }
