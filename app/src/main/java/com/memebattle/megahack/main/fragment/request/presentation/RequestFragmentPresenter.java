@@ -1,6 +1,7 @@
 package com.memebattle.megahack.main.fragment.request.presentation;
 
 import android.content.Context;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,7 +23,7 @@ import static com.memebattle.megahack.auth.fragment.sign_in.SignInFragmentPresen
 @InjectViewState
 public class RequestFragmentPresenter extends MvpPresenter <RequestFragmentView> implements RecyclerViewRequestsTaskAdapter.RecyclerCallback {
     public RequestFragmentPresenter(){
-        App.apiRequestService.getTasks(new ApiRequestService.ProfileCallback() {
+        /*App.apiRequestService.getTasks(new ApiRequestService.ProfileCallback() {
             @Override
             public void onSuccess(RequestTask requestTask) {
                 ArrayList<RequestsTask> requestsTaskList = new ArrayList<>();
@@ -37,6 +38,12 @@ public class RequestFragmentPresenter extends MvpPresenter <RequestFragmentView>
 
             }
         }, getStoragePreference());
+    */
+        ArrayList<RequestsTask> requestsTaskList = new ArrayList<>();
+        requestsTaskList.add(new RequestsTask("3939338383","33333333", "884883333"));
+        RecyclerViewRequestsTaskAdapter adapter = new RecyclerViewRequestsTaskAdapter(requestsTaskList);
+        adapter.registerRecyclerCallback(this);
+        getViewState().updateRecycler(adapter);
     }
     private String getStoragePreference(){
         String id = App.app.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE).getString(USER_ID, ERROR);
@@ -45,6 +52,6 @@ public class RequestFragmentPresenter extends MvpPresenter <RequestFragmentView>
 
     @Override
     public void onItemClick(String requestId) {
-
+        getViewState().openNote(requestId);
     }
 }

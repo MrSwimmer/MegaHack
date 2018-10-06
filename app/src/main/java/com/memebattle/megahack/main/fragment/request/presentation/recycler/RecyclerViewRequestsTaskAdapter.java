@@ -3,6 +3,7 @@ package com.memebattle.megahack.main.fragment.request.presentation.recycler;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +41,10 @@ public class RecyclerViewRequestsTaskAdapter extends RecyclerView.Adapter<Recycl
         holder.requestIdTextView.setText(requestsTask.requestId);
         holder.timeTextView.setText(requestsTask.time);
         holder.userIdTextView.setText(requestsTask.userId);
-        holder.itemView.setOnClickListener(view -> recyclerCallback.onItemClick(requestsTask.requestId));
+        holder.itemView.setOnClickListener(view -> {
+            Log.i("TAG", "set on click item");
+            recyclerCallback.onItemClick(requestsTask.requestId);
+        });
     }
     @Override
     public int getItemCount() {
