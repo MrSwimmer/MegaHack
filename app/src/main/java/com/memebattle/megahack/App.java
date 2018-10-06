@@ -28,7 +28,7 @@ public class App extends Application {
         super.onCreate();
         app = this;
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://миша/api/")
+                .baseUrl("http://10.241.103.127:5000/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();

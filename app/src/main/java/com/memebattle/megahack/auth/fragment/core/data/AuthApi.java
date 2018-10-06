@@ -12,6 +12,6 @@ public interface AuthApi {
     @POST("profile/")
     Observable<SignRequest> signIn(@Body UserSignIn userSignIn);
 
-    @POST("profile/")
+    @POST("api/operators/")
     Observable<SignRequest> signUp(@Body UserSignUp userSignUp);
 }

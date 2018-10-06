@@ -35,7 +35,9 @@ public class SignUpFragment extends MvpAppCompatFragment implements SignUpFragme
         secondCheckBox = view.findViewById(R.id.checkBox2);
         thirdCheckBox = view.findViewById(R.id.checkBox3);
         fourthCheckBox = view.findViewById(R.id.checkBox4);
-
+        ArrayList<String> list = new ArrayList();
+        list.add("1");
+        presenter.signUp("fff","ffff","ffffff", list);
         return view;
     }
 
@@ -44,14 +46,14 @@ public class SignUpFragment extends MvpAppCompatFragment implements SignUpFragme
         String name;
         String mail;
         String password;
-        ArrayList<Integer> type = new ArrayList<>();
+        ArrayList<String> type = new ArrayList<>();
         name = nameEditText.getText().toString();
         mail = mailEditText.getText().toString();
         password = passwordEditText.getText().toString();
-        if (firstCheckBox.isChecked()) type.add(1);
-        if (secondCheckBox.isChecked()) type.add(2);
-        if (thirdCheckBox.isChecked())type.add(3);
-        if (fourthCheckBox.isChecked())type.add(4);
+        if (firstCheckBox.isChecked()) type.add("1");
+        if (secondCheckBox.isChecked()) type.add("2");
+        if (thirdCheckBox.isChecked())type.add("3");
+        if (fourthCheckBox.isChecked())type.add("4");
         presenter.signUp(name,mail,password, type);
     }
 }
