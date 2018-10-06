@@ -13,6 +13,8 @@ import com.google.firebase.messaging.RemoteMessage;
 import com.memebattle.megahack.R;
 import com.memebattle.megahack.main.activity.MainActivity;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.Map;
 
 public class FCMService extends FirebaseMessagingService {
@@ -30,6 +32,7 @@ public class FCMService extends FirebaseMessagingService {
         String userId = data.get("id");
         String text = data.get("text");
         sendNotification(userId, channel, text);
+        EventBus.getDefault().post(true);
     }
 
     private void sendNotification(String id, String channel, String text) {
