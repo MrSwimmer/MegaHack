@@ -1,4 +1,4 @@
-package com.memebattle.megahack.main.fragment.request.presentation.note;
+package com.memebattle.megahack.main.fragment.note;
 
 import com.arellomobile.mvp.MvpView;
 
