@@ -15,9 +15,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class App extends Application {
 
-    ApiProfileService apiProfileService;
-    ApiAuthService apiAuthService;
-    ApiRequestService apiRequestService;
+    public static ApiAuthService apiAuthService;
+
+    public static ApiRequestService apiRequestService;
+    public static ApiProfileService apiProfileService;
     Retrofit retrofit;
 
     public static App app;
@@ -31,10 +32,13 @@ public class App extends Application {
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
-        ProfileApi profileApi = retrofit.create(ProfileApi.class);
-        apiProfileService = new ApiProfileService(profileApi);
+
         AuthApi authApi = retrofit.create(AuthApi.class);
         apiAuthService = new ApiAuthService(authApi);
+
+        ProfileApi profileApi = retrofit.create(ProfileApi.class);
+        apiProfileService = new ApiProfileService(profileApi);
+
         RequestApi requestApi = retrofit.create(RequestApi.class);
         apiRequestService = new ApiRequestService(requestApi);
     }

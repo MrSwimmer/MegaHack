@@ -1,11 +1,7 @@
 package com.memebattle.megahack.main.fragment.request.domain;
 
-import com.memebattle.megahack.auth.fragment.core.data.model.Status;
-import com.memebattle.megahack.auth.fragment.core.data.model.User;
-import com.memebattle.megahack.main.fragment.profile.data.ProfileApi;
-import com.memebattle.megahack.main.fragment.profile.data.model.Profile;
 import com.memebattle.megahack.main.fragment.request.data.RequestApi;
-import com.memebattle.megahack.main.fragment.request.data.model.Request;
+import com.memebattle.megahack.main.fragment.request.data.model.RequestTask;
 
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -17,15 +13,15 @@ public class ApiRequestService {
         this.api = api;
     }
 
-    public void getProfile(ProfileCallback callback) {
-        api.sendRequest(new Request())
+    public void getTasks(ProfileCallback callback, String opsId) {
+        api.sendRequest(opsId)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(callback::onSuccess, callback::onError);
     }
 
     public interface ProfileCallback {
-        void onSuccess(Status status);
+        void onSuccess(RequestTask requestTask);
         void onError(Throwable e);
     }
 }
