@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.memebattle.megahack.auth.fragment.core.data.AuthApi;
 import com.memebattle.megahack.auth.fragment.core.domain.ApiAuthService;
+import com.memebattle.megahack.core.SettingsService;
 import com.memebattle.megahack.main.fragment.profile.data.ProfileApi;
 import com.memebattle.megahack.main.fragment.profile.domain.ApiProfileService;
 import com.memebattle.megahack.main.fragment.request.data.RequestApi;
@@ -19,6 +20,7 @@ public class App extends Application {
 
     public static ApiRequestService apiRequestService;
     public static ApiProfileService apiProfileService;
+    public static SettingsService settingsService;
     Retrofit retrofit;
 
     public static App app;
@@ -41,5 +43,7 @@ public class App extends Application {
 
         RequestApi requestApi = retrofit.create(RequestApi.class);
         apiRequestService = new ApiRequestService(requestApi);
+
+        settingsService = new SettingsService(getApplicationContext());
     }
 }

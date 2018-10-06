@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.memebattle.megahack.R;
+import com.memebattle.megahack.main.fragment.profile.data.model.Profile;
 
 public class ProfileFragment extends MvpAppCompatFragment implements ProfileFragmentView{
     @InjectPresenter
@@ -16,6 +17,13 @@ public class ProfileFragment extends MvpAppCompatFragment implements ProfileFrag
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        presenter.getProfile();
         return view;
+    }
+
+
+    @Override
+    public void setProfile(Profile profile) {
+
     }
 }
