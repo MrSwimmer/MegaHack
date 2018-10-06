@@ -21,6 +21,7 @@ public class SignInFragmentPresenter extends MvpPresenter <SignInFragmentView> {
     public SignInFragmentPresenter(){
 
     }
+    void saveSharedPreference(){
     public void signIn(String mail, String password){
         App.apiAuthService.signIn(new ApiAuthService.StatusCallback() {
             @Override
