@@ -41,6 +41,5 @@ public class RequestFragment extends MvpAppCompatFragment implements RequestFrag
     public void openNote(String requestId) {
         Log.i("TAG","openNote");
         startActivity(new Intent(getActivity(),NoteActivity.class));
-
     }
 }
