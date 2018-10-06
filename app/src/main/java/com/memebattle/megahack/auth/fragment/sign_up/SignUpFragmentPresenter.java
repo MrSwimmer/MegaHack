@@ -29,7 +29,8 @@ public class SignUpFragmentPresenter extends MvpPresenter <SignUpFragmentView> {
 
             @Override
             public void onSuccess(SignRequest SignRequest) {
-                saveSharedPreference("id");
+                
+                saveSharedPreference(SignRequest.opsId);
             }
         },new UserSignUp(mail, name, password, type));
     }
