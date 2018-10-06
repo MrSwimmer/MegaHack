@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
@@ -24,6 +25,7 @@ public class SignUpFragment extends MvpAppCompatFragment implements SignUpFragme
     private CheckBox secondCheckBox;
     private CheckBox thirdCheckBox;
     private CheckBox fourthCheckBox;
+    private Button button;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,9 +37,10 @@ public class SignUpFragment extends MvpAppCompatFragment implements SignUpFragme
         secondCheckBox = view.findViewById(R.id.checkBox2);
         thirdCheckBox = view.findViewById(R.id.checkBox3);
         fourthCheckBox = view.findViewById(R.id.checkBox4);
-        ArrayList<String> list = new ArrayList();
-        list.add("1");
-        presenter.signUp("fff","ffff","ffffff", list);
+        button = view.findViewById(R.id.signUp);
+        button.setOnClickListener(view1 -> {
+            getData();
+        });
         return view;
     }
 
