@@ -9,7 +9,7 @@ import retrofit2.http.POST;
 import rx.Observable;
 
 public interface AuthApi {
-    @POST("profile/")
+    @POST("api/operatorinprocess/sign_in")
     Observable<SignRequest> signIn(@Body UserSignIn userSignIn);
 
     @POST("api/operators/")
