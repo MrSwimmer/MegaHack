@@ -2,6 +2,7 @@ package com.memebattle.megahack.auth.fragment.sign_up;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
@@ -19,18 +20,18 @@ public class SignUpFragmentPresenter extends MvpPresenter <SignUpFragmentView> {
     public SignUpFragmentPresenter(){
 
     }
-    public void signUp(String name, String mail, String password, ArrayList<Integer> type){
+    public void signUp(String name, String mail, String password, ArrayList<String> type){
         App.apiAuthService.signUp(new ApiAuthService.StatusCallback() {
             @Override
             public void onError(Throwable e) {
-
+                Log.i("TAG", e+"");
             }
 
             @Override
             public void onSuccess(SignRequest SignRequest) {
                 saveSharedPreference("id");
             }
-        },new UserSignUp());
+        },new UserSignUp(mail, name, password, type));
     }
     void saveSharedPreference(String id){
         SharedPreferences sharedPreferences = App.app.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
