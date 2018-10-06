@@ -31,7 +31,6 @@ public class ProfileFragment extends MvpAppCompatFragment implements ProfileFrag
             online = isChecked;
             if(isChecked) {
                 aSwitch.setText("Online");
-                getActivity().startService(new Intent(getActivity(), TimeService.class));
             }
             else{
                 aSwitch.setText("Offline");

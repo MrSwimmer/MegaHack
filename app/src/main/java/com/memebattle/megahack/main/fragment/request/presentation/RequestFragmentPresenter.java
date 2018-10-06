@@ -28,7 +28,7 @@ public class RequestFragmentPresenter extends MvpPresenter <RequestFragmentView>
         }, getStoragePreference());
     */
         ArrayList<RequestsTask> requestsTaskList = new ArrayList<>();
-        requestsTaskList.add(new RequestsTask("Тип 1","текст1", "имя1"));
+        requestsTaskList.add(new RequestsTask("Тип 1","Плохо ловит связь в деревне((", "Михаил"));
         requestsTaskList.add(new RequestsTask("Тип 2","текст2", "имя2"));
         requestsTaskList.add(new RequestsTask("Тип 3","текст3", "имя3"));
         requestsTaskList.add(new RequestsTask("Тип 4","текст4", "имя4"));

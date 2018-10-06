@@ -1,5 +1,6 @@
 package com.memebattle.megahack.main.activity;
 
+import android.content.Intent;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentManager;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.widget.FrameLayout;
 
 import com.memebattle.megahack.R;
+import com.memebattle.megahack.core.TimeService;
 import com.memebattle.megahack.main.fragment.profile.presentation.ProfileFragment;
 import com.memebattle.megahack.main.fragment.request.presentation.RequestFragment;
 import com.memebattle.megahack.main.fragment.settings.presentation.SettingsFragment;
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         RequestFragment requestFragment = new RequestFragment();
         ProfileFragment profileFragment = new ProfileFragment();
         SettingsFragment settingsFragment = new SettingsFragment();
-
+        startService(new Intent(MainActivity.this, TimeService.class));
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.container, requestFragment);
         fragmentTransaction.commit();
