@@ -51,4 +51,8 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-core:15.0.2'
     implementation 'com.google.firebase:firebase-messaging:15.0.2'
+
+    implementation 'org.greenrobot:eventbus:3.0.0'
+
+
 }

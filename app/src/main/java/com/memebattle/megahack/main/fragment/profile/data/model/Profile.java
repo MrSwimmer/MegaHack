@@ -1,17 +1,41 @@
 package com.memebattle.megahack.main.fragment.profile.data.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+
 public class Profile {
-    String id;
+    @SerializedName("status")
+    @Expose
+    public boolean status;
 
-    public Profile(String id) {
-        this.id = id;
+    @SerializedName("opsId")
+    @Expose
+    public String opsId;
+
+    @SerializedName("email")
+    @Expose
+    public String email;
+
+    @SerializedName("name")
+    @Expose
+    public String name;
+
+    @SerializedName("problems")
+    @Expose
+    public ArrayList<String> problems;
+
+
+    public Profile(){
+
     }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+    public Profile(boolean status, String opsId, String email, String name, ArrayList<String> problems){
+        super();
+        this.status = status;
+        this.opsId = opsId;
+        this.email = email;
+        this.name = name;
+        this.problems = problems;
     }
 }
