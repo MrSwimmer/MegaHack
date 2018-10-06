@@ -24,7 +24,7 @@ public class AuthActivity extends AppCompatActivity {
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
         SignInFragment signInFragment = new SignInFragment();
         String launch = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE).getString(USER_ID, ERROR);
-        if (!launch.equals("error")) {
+        if (launch.equals("error")) {
             startActivity(new Intent(AuthActivity.this, MainActivity.class));
         }else{
             fragmentTransaction.add(R.id.containerAuth, signInFragment);
