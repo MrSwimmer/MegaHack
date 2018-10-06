@@ -16,7 +16,7 @@ public class SignInFragmentPresenter extends MvpPresenter <SignInFragmentView> {
 
     }
     void saveSharedPreference(){
-        SharedPreferences sharedPreferences = App.getApplication().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = App.app.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(APP_PREFERENCES, "id");
         editor.apply();

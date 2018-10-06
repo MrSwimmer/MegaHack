@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "524354271566",
+    "firebase_url": "https://megahack-38292.firebaseio.com",
+    "project_id": "megahack-38292",
+    "storage_bucket": "megahack-38292.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524354271566:android:d013fc6f2bc95e69",
+        "android_client_info": {
+          "package_name": "com.memebattle.megahack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524354271566-2ku6ufkrqf7d106d140k1trtmau1k3jl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.memebattle.megahack",
+            "certificate_hash": "2dcf166b2f1e15f93b3c2f92f56866b220c998ab"
+          }
+        },
+        {
+          "client_id": "524354271566-lvd4e4gfpoisot1is8go0mbr9pr3h9p1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.memebattle.megahack",
+            "certificate_hash": "99c42fa5ff269ced643ef6d2a593e0556c2d4c51"
+          }
+        },
+        {
+          "client_id": "524354271566-cfs93vbo7irm0te55ts94etk9t2fpqi9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVN3OXVTWmpPQUjPLq8SxVs620NgJQPow"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524354271566-cfs93vbo7irm0te55ts94etk9t2fpqi9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
