@@ -1,13 +1,12 @@
 package com.memebattle.megahack.main.fragment.request.data;
 
-import com.memebattle.megahack.auth.fragment.core.data.model.Status;
-import com.memebattle.megahack.main.fragment.request.data.model.Request;
+import com.memebattle.megahack.main.fragment.request.data.model.RequestTask;
 
 import retrofit2.http.Body;
-import retrofit2.http.POST;
+import retrofit2.http.GET;
 import rx.Observable;
 
 public interface RequestApi {
-    @POST("profile/")
-    Observable<Status> sendRequest(@Body Request request);
+    @GET("requests/")
+    Observable<RequestTask> sendRequest(@Body String opsId);
 }

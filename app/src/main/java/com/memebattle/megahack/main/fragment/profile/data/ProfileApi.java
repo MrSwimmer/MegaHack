@@ -1,6 +1,6 @@
 package com.memebattle.megahack.main.fragment.profile.data;
 
-import com.memebattle.megahack.auth.fragment.core.data.model.User;
+import com.memebattle.megahack.auth.fragment.core.data.model.UserSignIn;
 import com.memebattle.megahack.main.fragment.profile.data.model.Profile;
 
 import retrofit2.http.Body;
@@ -15,5 +15,5 @@ public interface ProfileApi {
     Observable<Profile> getProfile(@Field("id") String id);
 
     @PUT("profile/")
-    Observable<Profile> setStatus(@Body User user);
+    Observable<Profile> setStatus(@Body UserSignIn userSignIn);
 }

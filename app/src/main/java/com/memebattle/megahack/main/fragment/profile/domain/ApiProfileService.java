@@ -1,6 +1,6 @@
 package com.memebattle.megahack.main.fragment.profile.domain;
 
-import com.memebattle.megahack.auth.fragment.core.data.model.User;
+import com.memebattle.megahack.auth.fragment.core.data.model.UserSignIn;
 import com.memebattle.megahack.main.fragment.profile.data.ProfileApi;
 import com.memebattle.megahack.main.fragment.profile.data.model.Profile;
 
@@ -22,7 +22,7 @@ public class ApiProfileService {
     }
 
     public void setStatus(ProfileCallback callback) {
-        api.setStatus(new User())
+        api.setStatus(new UserSignIn())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(callback::onSuccess, callback::onError);
