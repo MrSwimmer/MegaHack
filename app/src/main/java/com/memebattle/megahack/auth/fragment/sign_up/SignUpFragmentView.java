@@ -4,4 +4,5 @@ import com.arellomobile.mvp.MvpView;
 
 public interface SignUpFragmentView extends MvpView {
     void getData();
+    void nextActivity();
 }

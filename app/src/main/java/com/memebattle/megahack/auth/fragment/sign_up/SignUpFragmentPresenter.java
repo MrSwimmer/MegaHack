@@ -30,13 +30,8 @@ public class SignUpFragmentPresenter extends MvpPresenter <SignUpFragmentView> {
             @Override
             public void onSuccess(SignRequest signRequest) {
                 App.settingsService.setUserId(signRequest.opsId);
+                getViewState().nextActivity();
             }
         },new UserSignUp(mail, name, password, type));
-    }
-    void saveSharedPreference(String id){
-        SharedPreferences sharedPreferences = App.app.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(APP_PREFERENCES, id);
-        editor.apply();
     }
 }

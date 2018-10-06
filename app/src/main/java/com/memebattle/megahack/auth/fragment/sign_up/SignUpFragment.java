@@ -1,5 +1,6 @@
 package com.memebattle.megahack.auth.fragment.sign_up;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.memebattle.megahack.R;
+import com.memebattle.megahack.main.activity.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,5 +60,10 @@ public class SignUpFragment extends MvpAppCompatFragment implements SignUpFragme
         if (thirdCheckBox.isChecked())type.add("3");
         if (fourthCheckBox.isChecked())type.add("4");
         presenter.signUp(name,mail,password, type);
+    }
+
+    @Override
+    public void nextActivity() {
+        startActivity(new Intent(getActivity(), MainActivity.class));
     }
 }
