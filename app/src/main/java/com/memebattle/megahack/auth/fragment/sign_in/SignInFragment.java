@@ -1,5 +1,6 @@
 package com.memebattle.megahack.auth.fragment.sign_in;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.memebattle.megahack.R;
 import com.memebattle.megahack.auth.fragment.sign_up.SignUpFragment;
+import com.memebattle.megahack.main.activity.MainActivity;
 
 public class SignInFragment extends MvpAppCompatFragment implements SignInFragmentView {
     @InjectPresenter
@@ -49,5 +51,10 @@ public class SignInFragment extends MvpAppCompatFragment implements SignInFragme
         mail = mailEditText.getText().toString();
         password = passwordEditText.getText().toString();
         presenter.signIn(mail, password);
+    }
+
+    @Override
+    public void nextActivity() {
+        startActivity(new Intent(getActivity(), MainActivity.class));
     }
 }
