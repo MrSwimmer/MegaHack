@@ -4,7 +4,7 @@ import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 import com.memebattle.megahack.App;
 import com.memebattle.megahack.main.fragment.request.presentation.recycler.RecyclerViewRequestsTaskAdapter;
-import com.memebattle.megahack.main.fragment.request.presentation.recycler.RequestsTask;
+import com.memebattle.megahack.main.fragment.request.data.model.RequestsTask;
 
 import java.util.ArrayList;
 
@@ -28,7 +28,10 @@ public class RequestFragmentPresenter extends MvpPresenter <RequestFragmentView>
         }, getStoragePreference());
     */
         ArrayList<RequestsTask> requestsTaskList = new ArrayList<>();
-        requestsTaskList.add(new RequestsTask("3939338383","33333333", "884883333"));
+        requestsTaskList.add(new RequestsTask("Тип 1","текст1", "имя1"));
+        requestsTaskList.add(new RequestsTask("Тип 2","текст2", "имя2"));
+        requestsTaskList.add(new RequestsTask("Тип 3","текст3", "имя3"));
+        requestsTaskList.add(new RequestsTask("Тип 4","текст4", "имя4"));
         RecyclerViewRequestsTaskAdapter adapter = new RecyclerViewRequestsTaskAdapter(requestsTaskList);
         adapter.registerRecyclerCallback(this);
         getViewState().updateRecycler(adapter);

@@ -1,7 +1,7 @@
 package com.memebattle.megahack.main.fragment.request.domain;
 
 import com.memebattle.megahack.main.fragment.request.data.RequestApi;
-import com.memebattle.megahack.main.fragment.request.data.model.RequestTask;
+import com.memebattle.megahack.main.fragment.request.data.model.RequestsTask;
 
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -21,7 +21,7 @@ public class ApiRequestService {
     }
 
     public interface ProfileCallback {
-        void onSuccess(RequestTask requestTask);
+        void onSuccess(RequestsTask requestTask);
         void onError(Throwable e);
     }
 }

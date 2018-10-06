@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.memebattle.megahack.R;
+import com.memebattle.megahack.main.fragment.request.data.model.RequestsTask;
 
 
 import java.util.List;
@@ -38,12 +39,12 @@ public class RecyclerViewRequestsTaskAdapter extends RecyclerView.Adapter<Recycl
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         final RequestsTask requestsTask = requestsTaskList.get(position);
-        holder.requestIdTextView.setText(requestsTask.requestId);
-        holder.timeTextView.setText(requestsTask.time);
-        holder.userIdTextView.setText(requestsTask.userId);
+        holder.name.setText(requestsTask.name);
+        holder.text.setText(requestsTask.text);
+        holder.type.setText(requestsTask.type);
         holder.itemView.setOnClickListener(view -> {
             Log.i("TAG", "set on click item");
-            recyclerCallback.onItemClick(requestsTask.requestId);
+            recyclerCallback.onItemClick(requestsTask.name);
         });
     }
     @Override
@@ -52,15 +53,15 @@ public class RecyclerViewRequestsTaskAdapter extends RecyclerView.Adapter<Recycl
     }
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView userIdTextView;
-        private TextView timeTextView;
-        private TextView requestIdTextView;
+        private TextView type;
+        private TextView text;
+        private TextView name;
 
         MyViewHolder(View itemView) {
             super(itemView);
-            userIdTextView = itemView.findViewById(R.id.textViewUserId);
-            timeTextView = itemView.findViewById(R.id.textViewTime);
-            requestIdTextView = itemView.findViewById(R.id.textViewRequestId);
+            type = itemView.findViewById(R.id.type);
+            text = itemView.findViewById(R.id.text);
+            name = itemView.findViewById(R.id.name);
         }
     }
 }

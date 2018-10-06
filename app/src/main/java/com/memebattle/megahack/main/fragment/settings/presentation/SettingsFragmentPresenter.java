@@ -8,5 +8,4 @@ public class SettingsFragmentPresenter extends MvpPresenter <SettingsFragmentVie
     public SettingsFragmentPresenter(){
 
     }
-
 }

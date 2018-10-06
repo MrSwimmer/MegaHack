@@ -17,6 +17,7 @@ public class ProfileFragment extends MvpAppCompatFragment implements ProfileFrag
     ProfileFragmentPresenter presenter;
 
     Switch aSwitch;
+    boolean online;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -24,7 +25,9 @@ public class ProfileFragment extends MvpAppCompatFragment implements ProfileFrag
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         presenter.getProfile();
         aSwitch = view.findViewById(R.id.switch1);
+        aSwitch.setChecked(online);
         aSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            online = isChecked;
             if(isChecked)
                 aSwitch.setText("Online");
             else
@@ -32,7 +35,6 @@ public class ProfileFragment extends MvpAppCompatFragment implements ProfileFrag
         });
         return view;
     }
-
 
     @Override
     public void setProfile(Profile profile) {
