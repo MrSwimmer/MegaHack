@@ -10,7 +10,6 @@ import com.memebattle.megahack.App;
 @InjectViewState
 public class SignInFragmentPresenter extends MvpPresenter <SignInFragmentView> {
     public static final String APP_PREFERENCES = "settings";
-    public static final String ERROR = "error";
     public static final String USER_ID = "id";
 
     public SignInFragmentPresenter(){
