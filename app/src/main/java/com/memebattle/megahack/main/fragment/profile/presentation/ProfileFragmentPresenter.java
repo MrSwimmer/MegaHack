@@ -1,6 +1,8 @@
 package com.memebattle.megahack.main.fragment.profile.presentation;
 
 
+import android.util.Log;
+
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 import com.memebattle.megahack.App;
@@ -15,6 +17,7 @@ public class ProfileFragmentPresenter extends MvpPresenter <ProfileFragmentView>
 
     void getProfile() {
         String id = App.settingsService.getUserId();
+        Log.i("TAG", id);
         App.apiProfileService.getProfile(id, new ApiProfileService.ProfileCallback() {
             @Override
             public void onSuccess(Profile profile) {

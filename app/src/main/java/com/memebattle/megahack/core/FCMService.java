@@ -32,7 +32,6 @@ public class FCMService extends FirebaseMessagingService {
         String userId = data.get("id");
         String text = data.get("text");
         sendNotification(userId, channel, text);
-        EventBus.getDefault().post(true);
     }
 
     private void sendNotification(String id, String channel, String text) {

@@ -14,6 +14,6 @@ public interface ProfileApi {
     @GET("api/operators/{operatorId}")
     Observable<Profile> getProfile(@Path("operatorId") String id);
 
-    @PUT("api/operators/")
+    @PUT("api/operatorinprocess")
     Observable<String> setStatus(@Body ProfileStatus profileStatus);
 }

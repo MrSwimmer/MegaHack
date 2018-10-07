@@ -27,6 +27,7 @@ public class AuthActivity extends AppCompatActivity {
 
         if (launch.equals("error")) {
             startActivity(new Intent(AuthActivity.this, MainActivity.class));
+            this.finish();
         }else{
             fragmentTransaction.add(R.id.containerAuth, new SignInFragment());
             fragmentTransaction.commit();

@@ -56,5 +56,6 @@ public class SignInFragment extends MvpAppCompatFragment implements SignInFragme
     @Override
     public void nextActivity() {
         startActivity(new Intent(getActivity(), MainActivity.class));
+        getActivity().finish();
     }
 }

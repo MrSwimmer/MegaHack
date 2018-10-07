@@ -65,5 +65,6 @@ public class SignUpFragment extends MvpAppCompatFragment implements SignUpFragme
     @Override
     public void nextActivity() {
         startActivity(new Intent(getActivity(), MainActivity.class));
+        getActivity().finish();
     }
 }

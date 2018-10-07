@@ -38,8 +38,29 @@ public class RequestFragment extends MvpAppCompatFragment implements RequestFrag
     }
 
     @Override
-    public void openNote(String requestId) {
-        Log.i("TAG","openNote");
-        startActivity(new Intent(getActivity(),NoteActivity.class));
+    public void openNote(int requestId) {
+        Log.i("TAG","openNote " +requestId);
+        Intent intent = new Intent(getActivity(),NoteActivity.class);
+        if (requestId==0) {
+            intent.putExtra("name", "Михаил");
+            intent.putExtra("problem", "Сотовая связь");
+            intent.putExtra("text", "Плохо ловит связь мегафона в деревне((");
+        }
+        if (requestId==1){
+            intent.putExtra("name", "Александр");
+            intent.putExtra("problem", "Интернет");
+            intent.putExtra("text", "Мегафон, медленно!!!");
+        }
+        if (requestId==2){
+            intent.putExtra("name", "Андрей");
+            intent.putExtra("problem", "Тарифы");
+            intent.putExtra("text", "Дороговато на мегафоне");
+        }
+        if (requestId==3){
+            intent.putExtra("name", "Артём");
+            intent.putExtra("problem", "Другое");
+            intent.putExtra("text", "мегафон, интересное предложение");
+        }
+        startActivity(intent);
     }
 }
