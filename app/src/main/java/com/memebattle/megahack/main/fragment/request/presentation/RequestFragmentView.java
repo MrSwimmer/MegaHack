@@ -5,5 +5,5 @@ import com.memebattle.megahack.main.fragment.request.presentation.recycler.Recyc
 
 public interface RequestFragmentView extends MvpView {
     void updateRecycler(RecyclerViewRequestsTaskAdapter adapter);
-    void openNote(String requestId);
+    void openNote(int requestId);
 }

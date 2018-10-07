@@ -8,6 +8,6 @@ import retrofit2.http.Path;
 import rx.Observable;
 
 public interface RequestApi {
-    @GET("requests/{operatorId}")
+    @GET("operatorinprocess/{operatorId}")
     Observable<RequestsTask> sendRequest(@Path("operatorId") String id);
 }

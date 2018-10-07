@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class App extends Application {
 
     public static ApiAuthService apiAuthService;
-
+    public static String deleteItem = " ";
     public static ApiRequestService apiRequestService;
     public static ApiProfileService apiProfileService;
     public static SettingsService settingsService;

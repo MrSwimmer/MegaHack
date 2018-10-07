@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 @InjectViewState
 public class RequestFragmentPresenter extends MvpPresenter <RequestFragmentView> implements RecyclerViewRequestsTaskAdapter.RecyclerCallback {
+
     public RequestFragmentPresenter(){
         /*App.apiRequestService.getTasks(new ApiRequestService.ProfileCallback() {
             @Override
@@ -28,10 +29,10 @@ public class RequestFragmentPresenter extends MvpPresenter <RequestFragmentView>
         }, getStoragePreference());
     */
         ArrayList<RequestsTask> requestsTaskList = new ArrayList<>();
-        requestsTaskList.add(new RequestsTask("Тип 1","текст1", "имя1"));
-        requestsTaskList.add(new RequestsTask("Тип 2","текст2", "имя2"));
-        requestsTaskList.add(new RequestsTask("Тип 3","текст3", "имя3"));
-        requestsTaskList.add(new RequestsTask("Тип 4","текст4", "имя4"));
+        if (!App.deleteItem.equals("Сотовая связь"))requestsTaskList.add(new RequestsTask("Сотовая связь","Плохо ловит связь мегафона в деревне((", "Михаил"));
+        if (!App.deleteItem.equals("Интернет"))requestsTaskList.add(new RequestsTask("Интернет","Мегафон, медленно!!!", "Александр"));
+        if (!App.deleteItem.equals("Тарифы")) requestsTaskList.add(new RequestsTask("Тарифы","Дороговато на мегафоне", "Андрей"));
+        if (!App.deleteItem.equals("Другое"))requestsTaskList.add(new RequestsTask("Другое","мегафон, интересное предложение", "Артём"));
         RecyclerViewRequestsTaskAdapter adapter = new RecyclerViewRequestsTaskAdapter(requestsTaskList);
         adapter.registerRecyclerCallback(this);
         getViewState().updateRecycler(adapter);
@@ -41,7 +42,7 @@ public class RequestFragmentPresenter extends MvpPresenter <RequestFragmentView>
     }
 
     @Override
-    public void onItemClick(String requestId) {
+    public void onItemClick(int requestId) {
         getViewState().openNote(requestId);
     }
 }

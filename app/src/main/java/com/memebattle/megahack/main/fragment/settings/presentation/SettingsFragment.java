@@ -26,6 +26,7 @@ public class SettingsFragment extends MvpAppCompatFragment implements SettingsFr
         outTextView.setOnClickListener(view1 -> {
             App.settingsService.setUserId("error");
             startActivity(new Intent(getActivity(), AuthActivity.class));
+            getActivity().finish();
         });
         return view;
     }

@@ -18,7 +18,7 @@ import java.util.List;
 public class RecyclerViewRequestsTaskAdapter extends RecyclerView.Adapter<RecyclerViewRequestsTaskAdapter.MyViewHolder> {
     private List<RequestsTask> requestsTaskList;
     public interface RecyclerCallback{
-        void onItemClick(String requestId);
+        void onItemClick(int requestId);
     }
     private RecyclerCallback recyclerCallback;
     public RecyclerViewRequestsTaskAdapter(List<RequestsTask> devicesList) {
@@ -44,7 +44,7 @@ public class RecyclerViewRequestsTaskAdapter extends RecyclerView.Adapter<Recycl
         holder.type.setText(requestsTask.type);
         holder.itemView.setOnClickListener(view -> {
             Log.i("TAG", "set on click item");
-            recyclerCallback.onItemClick(requestsTask.name);
+            recyclerCallback.onItemClick(position);
         });
     }
     @Override
